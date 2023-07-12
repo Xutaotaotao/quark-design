@@ -1,4 +1,4 @@
-import QuarkElement, { property, customElement, Fragment, state } from "quarkc";
+import { property, customElement, Fragment, state, QuarkElement } from "quarkc";
 import style from "./style.css";
 export interface Props {
   type?: "circular" | "spinner";
@@ -24,10 +24,10 @@ class QuarkLoading extends QuarkElement {
   vertical = false;
 
   @property()
-  color: string | undefined = "#879099";
+  color?: string = "#879099";
 
   @property()
-  size: string | undefined = undefined;
+  size: string = undefined;
 
   @state()
   rotate = 0;

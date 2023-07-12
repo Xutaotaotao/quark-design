@@ -1,10 +1,4 @@
-import QuarkElement, {
-  property,
-  customElement,
-  createRef,
-  Fragment,
-  state,
-} from "quarkc";
+import { property, customElement, Fragment, state, QuarkElement } from "quarkc";
 import "../loading";
 import style from "./style.css";
 export interface Props {
@@ -67,6 +61,9 @@ class QuarkButton extends QuarkElement {
     }
   };
   calculateShow = (value) => {
+    if (this.format.length === 2) {
+      return [this.format.toLocaleLowerCase()].find((i) => i === value);
+    }
     const dot = this.format.slice(2, 3);
     const { format = "" } = this;
     const arr = format.split(dot).map((i) => i.toLocaleLowerCase());

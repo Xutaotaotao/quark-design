@@ -1,4 +1,4 @@
-import QuarkElement, { property, customElement, createRef } from "quarkc";
+import { property, customElement, createRef, QuarkElement } from "quarkc";
 import "../loading";
 import style from "./style.css";
 import { pxToVw } from "../../utils/util";
@@ -36,7 +36,7 @@ class QuarkButton extends QuarkElement {
   type = "";
 
   @property()
-  icon: string | undefined = undefined;
+  icon?: string = undefined;
 
   @property()
   shape: string;
@@ -60,7 +60,14 @@ class QuarkButton extends QuarkElement {
   })
   plain = false;
 
+  @property({
+    type: Boolean,
+  })
+  light = false;
+
   slotRef: any = createRef();
+
+  isActive: true;
 
   renderIcon = () => {
     if (this.icon && this.icon.startsWith("http")) {
@@ -85,6 +92,7 @@ class QuarkButton extends QuarkElement {
         e.stopPropagation();
       }
     });
+    this.slotRef.current.addEventListener("touchstart", () => {});
   }
 
   render() {

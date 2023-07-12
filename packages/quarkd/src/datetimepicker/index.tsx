@@ -1,4 +1,4 @@
-import QuarkElement, { property, createRef, customElement } from "quarkc";
+import { property, createRef, customElement, QuarkElement } from "quarkc";
 import "./DatePicker";
 import "./TimePicker";
 import "@quarkd/icons/lib/close";
@@ -46,10 +46,6 @@ export interface CustomEvent {
   style,
 })
 class QuarkDatetimePicker extends QuarkElement {
-  constructor() {
-    super();
-  }
-
   @property({ type: Boolean })
   open = false;
 

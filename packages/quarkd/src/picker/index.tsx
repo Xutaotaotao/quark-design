@@ -1,10 +1,11 @@
 import BScroll from "@better-scroll/core";
 import Wheel from "@better-scroll/wheel";
-import QuarkElement, {
+import {
   property,
   createRef,
   customElement,
   state,
+  QuarkElement,
 } from "quarkc";
 import "../popup";
 import "../button";
@@ -41,10 +42,6 @@ BScroll.use(Wheel);
   style,
 })
 class QuarkPicker extends QuarkElement {
-  constructor() {
-    super();
-  }
-
   @property({ type: Boolean })
   open = false;
 
@@ -186,7 +183,7 @@ class QuarkPicker extends QuarkElement {
             <slot name="header">
               <span class="quark-picker-title">{this.title}</span>
               <div class="quark-picker-header-close-btn">
-                <quark-icon-close onclick={this.popupClose} />
+                <quark-icon-close size="24" onclick={this.popupClose} />
               </div>
             </slot>
           </div>

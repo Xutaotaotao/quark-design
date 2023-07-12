@@ -3,11 +3,12 @@ import {
   enableBodyScroll,
   clearAllBodyScrollLocks,
 } from "body-scroll-lock";
-import QuarkElement, {
+import {
   property,
   customElement,
   Fragment,
   createRef,
+  QuarkElement,
 } from "quarkc";
 import "@quarkd/icons/lib/close";
 import style from "./style.css";
@@ -64,7 +65,7 @@ class QuarkPopup extends QuarkElement {
   position = "bottom";
 
   @property()
-  zindex: number | string | undefined = undefined;
+  zindex?: number | string = undefined;
 
   wrap: any = createRef();
 

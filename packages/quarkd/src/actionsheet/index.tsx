@@ -3,7 +3,7 @@ import {
   enableBodyScroll,
   clearAllBodyScrollLocks,
 } from "body-scroll-lock";
-import QuarkElement, { property, customElement, createRef } from "quarkc";
+import { property, customElement, createRef, QuarkElement } from "quarkc";
 
 import style from "./style.css";
 
@@ -46,15 +46,15 @@ class QuarkActionSheet extends QuarkElement {
 
   actions: Action[] = [];
 
-  cancelText: string | undefined = undefined;
+  cancelText?: string = undefined;
 
-  titleColor: string | undefined = undefined;
+  titleColor?: string = undefined;
 
-  titleFontSize: number | undefined = undefined;
+  titleFontSize?: number = undefined;
 
-  cancelTextColor: string | undefined = undefined;
+  cancelTextColor?: string = undefined;
 
-  cancelTextFontSize: number | undefined = undefined;
+  cancelTextFontSize?: number = undefined;
 
   zIndex = 999;
 

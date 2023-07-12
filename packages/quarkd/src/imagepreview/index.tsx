@@ -1,11 +1,12 @@
 import BScroll from "@better-scroll/core";
 import Slide from "@better-scroll/slide";
-import QuarkElement, {
+import {
   Fragment,
   createRef,
   customElement,
   state,
   property,
+  QuarkElement,
 } from "quarkc";
 import "../popup";
 
@@ -40,9 +41,9 @@ class QuarkImagePreview extends QuarkElement {
 
   startY = 0;
 
-  endX: number | undefined = 0;
+  endX?: number = 0;
 
-  endY: number | undefined = 0;
+  endY?: number = 0;
 
   isFn = false;
 
